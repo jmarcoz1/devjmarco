@@ -3,11 +3,14 @@
 @import "~@fontsource/darker-grotesque";
 
 :root {
-  /* color */
+  /* darkmode color */
   --colorbackground: #1c1c1c;
   --colorprimary: #f5f5dc;
   --colorsecondary: #d7d7a8;
   --coloraccent: #507963;
+
+  /* lightmode color */
+  /* tbd */
   
   /* fonts */
   --ff: Familjen Grotesk;
@@ -41,6 +44,7 @@
 
 body {
   background: var(--colorbackground);
+  background-image:/* webpackIgnore: true */ url('/assets/texture.png');
   height: 100vh;
   display: flex;
   /* max-width: 1280px; */
@@ -52,4 +56,65 @@ body {
   /* vertical margin */
   margin-top: var(--margin-m);
   margin-bottom: var(--margin-m);
+}
+
+div {
+  display: flex;
+}
+.parent-container {
+  flex-direction: row;
+  gap: 200px;
+}
+.first-column {
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.second-column {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.third-column {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+a {
+  background: none;
+  text-decoration: none;
+  color: var(--colorprimary);
+}
+.contact-section {
+  font: var(--h2);
+}
+.media-section {
+  font: var(--h4);
+}
+
+p {
+  background: none;
+}
+.name {
+  color: var(--colorprimary);
+  font: var(--h1);
+}
+.location {
+  color: var(--colorprimary);
+  font: var(--h5);
+}
+.details {
+  color: var(--colorprimary);
+  font: var(--h3);
+}
+
+h1 {
+  font: var(--h1);
+}
+h2 {
+  font: var(--h2);
+}
+h3 {
+  font: var(--h3);
+}
+h4 {
+  font: var(--h4);
 }
