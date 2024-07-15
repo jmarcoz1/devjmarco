@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;700&display=swap');
+@import "~@fontsource/space-grotesk";
+@import "~@fontsource/darker-grotesque";
+
+:root {
+  /* darkmode color */
+  --colorbackground: #1c1c1c;
+  --colorprimary: #f5f5dc;
+  --colorsecondary: #d7d7a8; /* make a tad darker */
+  --coloraccent: #507963;
+
+  /* lightmode color */
+  /* tbd */
+  
+  /* fonts */
+  --ff: Familjen Grotesk;
+  --ff-links: Space Grotesk;
+  --ff-details: Darker Grotesque;
+
+  /* font size */
+  --font-xxs: 2rem;
+  --font-xs: 2.5rem;
+  --font-s: 3rem;
+  --font-m: 3.5rem;
+  --font-l: 4rem;
+  --font-xl: 4.5rem;
+
+  /* margins */
+  --margin-xxs: 3rem;
+  --margin-xs: 4rem;
+  --margin-s: 5rem;
+  --margin-m: 6rem;
+  --margin-l: 7rem;
+  --margin-xl: 8rem;
+
+  /* text */
+  /* font weigh - font size - line height - font family */
+  --h1: normal 40px/normal var(--ff);
+  /* --h2: normal 48px/normal var(--ff-links);
+  --h3: normal 28px/normal var(--ff-details);
+  --h4: normal 20px/normal var(--ff-links);
+  --h5: normal 20px/normal var(--ff); */
+}
+
+body {
+  background: var(--colorbackground);
+  background-image:/* webpackIgnore: true */ url('/assets/texture.png');
+}
+
+div {
+  width: 100%;
+  display: flex;
+}
+.work-parent-container {
+  flex-direction: row;
+}
+.work-first-column {
+  display: flex;
+  align-items: start;
+  flex: 1;
+  padding: 96px 94px;
+}
+.work-under-construction {
+  /* display: flex; */
+  align-items: end;
+  flex: 1;
+  padding: 96px 94px;
+}
+
+h1 {
+  font: var(--h1);
+  color: var(--colorprimary);
+  margin: 0;
+}

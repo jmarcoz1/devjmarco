@@ -1,32 +1,40 @@
 import React from 'react'
-import '../styles/style.css'
+import { Link } from "react-router-dom";
+import '../styles/home.css'
 
 const Home = () => {
   return (
-    <div className='parent-container'>
-      <div className='first-column'>
-        <a className='media-section' href='https://google.com'>Li</a>
-        <a className='media-section' href='https://google.com'>Tw</a>
-        <a className='media-section' href='https://google.com'>Ig</a>
-        <a className='media-section' href='https://google.com'>Gi</a>
-      </div>
-      <div className='second-column'>
-          <div className='second-column'>
-            <p className='name'>JORGE</p>
-            <p className='name'>MARCO</p>
-            <p className='name'>ARRAEZ</p>
-          </div>
-          <div className='location'>Valence, Spain</div>
-        <div className='second-column'>
-          <p className='details'>Devops / Software engineer</p>
-          <p className='details'>Bachelor - Telecommunications eng.</p>
-          <p className='details'>MsC - Cloud computing</p>
+    <div className='home-parent-container'>
+
+      {/* <div> */}
+        <div className='home-first-column'>
+          <a className='home-media-section' href='https://www.linkedin.com/in/jorgemarcoarraez/'>Li</a>
+          <a className='home-media-section' href='https://google.com'>Tw</a>
+          <a className='home-media-section' href='https://www.instagram.com/dev.jmarco'>Ig</a>
+          <a className='home-media-section' href='https://github.com/jmarcoz1'>Gi</a>
         </div>
-      </div>
-      <div className='third-column'>
-        <a className='contact-section' href='https://google.com'>WORK</a>
-        <a className='contact-section' href='https://google.com'>ABOUT</a>
-        <a className='contact-section' href='https://google.com'>CONTACT</a>
+
+        <div className='home-second-column'>
+          <div className='home-name-container'>
+            <h1 className='home-name'>JORGE</h1>
+            <h1 className='home-name'>MARCO</h1>
+            <h1 className='home-name'>ARRAEZ</h1>
+          </div>
+          <div className='home-location-container'>
+            <p className='home-location'>Valence, Spain</p>
+          </div>
+          <div className='home-details-container'>
+            <h2 className='home-details'>Devops / Software engineer</h2>
+            <h2 className='home-details'>Bachelor - Telecommunications eng.</h2>
+            <h2 className='home-details'>MsC - Cloud computing</h2>
+          </div>
+        </div>
+      {/* </div> */}
+
+      <div className='home-third-column'>
+        <Link className='home-contact-section work' to='/work'>WORK</Link>
+        <Link className='home-contact-section about' to='/about'>ABOUT</Link>
+        <Link className='home-contact-section contact' to='/contact'>CONTACT</Link>
       </div>
     </div>
   )
