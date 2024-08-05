@@ -5,8 +5,6 @@ import '../styles/home.css'
 const Home = () => {
   return (
     <div className='home-parent-container'>
-
-      {/* <div> */}
         <div className='home-first-column'>
           <a className='home-media-section' href='https://www.linkedin.com/in/jorgemarcoarraez/'>Li</a>
           <a className='home-media-section' href='https://google.com'>Tw</a>
@@ -29,7 +27,6 @@ const Home = () => {
             <h2 className='home-details'>MsC - Cloud computing</h2>
           </div>
         </div>
-      {/* </div> */}
 
       <div className='home-third-column'>
         <Link className='home-contact-section work' to='/work'>WORK</Link>
