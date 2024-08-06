@@ -7,7 +7,7 @@ const Home = () => {
     <div className='home-parent-container'>
         <div className='home-first-column'>
           <a className='home-media-section' href='https://www.linkedin.com/in/jorgemarcoarraez/'>Li</a>
-          <a className='home-media-section' href='https://google.com'>Tw</a>
+          <a className='home-media-section' href='https://x.com/devjmarco'>Tw</a>
           <a className='home-media-section' href='https://www.instagram.com/dev.jmarco'>Ig</a>
           <a className='home-media-section' href='https://github.com/jmarcoz1'>Gi</a>
         </div>
@@ -16,10 +16,10 @@ const Home = () => {
           <div className='home-name-container'>
             <h1 className='home-name'>JORGE</h1>
             <h1 className='home-name'>MARCO</h1>
-            <h1 className='home-name'>ARRAEZ</h1>
+            <h1 className='home-name'>ARRÁEZ</h1>
           </div>
           <div className='home-location-container'>
-            <p className='home-location'>Valence, Spain</p>
+            <p className='home-location'>Valencia, Spain</p>
           </div>
           <div className='home-details-container'>
             <h2 className='home-details'>Devops / Software engineer</h2>

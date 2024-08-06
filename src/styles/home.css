@@ -57,11 +57,11 @@ div {
   padding: var(--margin-xs) var(--margin-s);
   flex-direction: row;
   flex-wrap: wrap;
-  /* overflow: auto; */
 }
 .home-first-column {
   flex-direction: column;
   justify-content: flex-start;
+  row-gap: 32px;
   flex: 1;
 }
 .home-main-container {
@@ -85,7 +85,7 @@ div {
 }
 .home-location-container {
   flex-direction: column;
-  height: 30vh;
+  height: 20vh;
 }
 .home-details-container {
   flex-direction: column;
@@ -125,6 +125,11 @@ p {
 
 h1 {
   font: var(--h1);
+  color: var(--colorprimary);
+  margin: 0;
+}
+.home-name {
+  font: normal 64px/normal var(--ff);
   color: var(--colorprimary);
   margin: 0;
 }

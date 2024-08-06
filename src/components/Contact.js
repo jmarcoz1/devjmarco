@@ -22,7 +22,7 @@ const Contact = () => {
           <a className='contact-mail-a' href='mailto:marcojarraez@gmail.com'>marcojarraez@gmail.com</a>
           <div className='contact-media'>
             <a className='contact-a' href='https://www.linkedin.com/in/jorgemarcoarraez/'>LinkedIn</a>
-            <a className='contact-a' href='https://.com/'>Twitter</a>
+            <a className='contact-a' href='https://x.com/devjmarco'>Twitter</a>
             <a className='contact-a' href='https://www.instagram.com/dev.jmarco'>Instagram</a>
             <a className='contact-a' href='https://github.com/jmarcoz1'>Github</a>
           </div>
