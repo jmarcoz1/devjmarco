@@ -4,14 +4,14 @@ import '../styles/about.css'
 
 const About = () => {
   return (
-    <div className='contact-parent-container'>
-      <div className='contact-first-column'>
+    <div className='about-parent-container'>
+      <div className='about-first-column'>
         <Link className='about-homelink' to='/'>~/</Link>
       </div>
 
-      <div className='contact-greeting-section'>
-        <div className='contact-hi-div'>
-          <h1 className='contact-h1'>Hi! I am Jorge</h1>
+      <div className='about-greeting-section'>
+        <div className='about-hi-div'>
+          <h1 className='about-h1'>Hi! I'm Jorge</h1>
         </div>
 
         <div className='about-h2-div'>
@@ -45,8 +45,8 @@ const About = () => {
         </div>
       </div>
 
-      <div className='contact-empty-space'>
-      </div>
+      {/* <div className='contact-empty-space'>
+      </div> */}
     </div>
   )
 }
