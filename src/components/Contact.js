@@ -9,17 +9,18 @@ const Contact = () => {
         <Link className='contact-homelink' to='/'>~/</Link>
       </div>
 
-      <div className='contact-greeting-section'>
+      <div className='contact-second-column'>
 
         <div className='contact-h2-div'>
-          <h2 className='contact-h1'>Got a challenge? Reach out.</h2>
+          <h2 className='contact-h1'>Got a challenge?</h2>
+          <h2 className='contact-h1'>Reach out.</h2>
         </div>
 
         <div className='contact-empty-horizontal'>
         </div>
 
         <div className='contact-info'>
-          <a className='contact-mail-a' href='mailto:marcojarraez@gmail.com'>marcojarraez@gmail.com</a>
+          <a className='contact-mail-a' href='mailto:jorge@devjmarco.com'>jorge@devjmarco.com</a>
           <div className='contact-media'>
             <a className='contact-a' href='https://www.linkedin.com/in/jorgemarcoarraez/'>LinkedIn</a>
             <a className='contact-a' href='https://x.com/devjmarco'>Twitter</a>

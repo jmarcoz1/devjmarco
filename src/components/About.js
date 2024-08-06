@@ -16,25 +16,24 @@ const About = () => {
 
         <div className='about-h2-div'>
           <h2 className='about-h2'>
-            Mathematics, Physics and computers have always been
-            my thing. I am starting my MsC in Cloud Computing 
-            September 2024.
+            I began my professional career back in February 2023, when I got an internship as a Software engineer.
+            After four months, I was hired as a Junior engineer, working with a team of 3 people to develop a CI test framework with its own web application.
+          </h2>
+          <h2 className='about-h2'>
+            Working in such a small team, which you may consider a startup inside a big company, allowed me to become proficient at using tools I was not familiar with (Jenkins, Docker, PostgreSQL)
+            and improve my skills in Python, Bash and Javascript. The learning curve was steep, but I was lucky to be surrounded by sublime professionals who mentored me along the way. Thanks Anna, Emanuel, Jaime.
           </h2> <br />
           <h2 className='about-h2'>
-            In 2024 I wanted to dive into the artistic part of
-            life, since I wanted to expand my taste for
-            art/fashion/design/photography. That is where the
-            idea of coming up with a website came from.
-            I had the coding skills. However, designing the layout,
-            creating a colour palette and making an overall
-            coherent design seemed a world to me.
-            I might have succeeded or not, so send me
-            any suggestions you may have ;).
+            I graduated in Telecommunications engineering in September 2023, and decided to spend the 2023-2024 academic year working.
+            I am starting a Master's degree in Cloud and High Performance Computing in September 2024.
           </h2> <br />
           <h2 className='about-h2'>
-            I am keen on running. I have ran
-            3 half marathons and I plan on running Valencia
-            marathon on December 1st 2024. I will be busy with the preparatoin, so I may not populate the
+            I am into all types of technology, specially open source software.
+            The Linux project fascinates me, I would like to dive deeper into the firmware development realm and eventually make some contributions to one of the greatest iniciatives of the last century.
+          </h2> <br />
+          <h2 className='about-h2'>
+            A more personal note:
+            I am keen on running. I intend to run Valencia marathon on December 1st 2024. I will be busy with the preparation, so I may not populate the
             work section of the web as often as I would like.
           </h2> <br />
           <h2 className='about-h2'>
@@ -44,9 +43,6 @@ const About = () => {
           </h2>
         </div>
       </div>
-
-      {/* <div className='contact-empty-space'>
-      </div> */}
     </div>
   )
 }

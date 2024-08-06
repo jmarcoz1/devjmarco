@@ -78,13 +78,15 @@ div {
 /* h1 */
 .about-h1 {
   font: var(--about-h1);
+  margin-bottom: 16px;
 }
 
 h2 {
   font: var(--about-h2);
 }
 .about-h2 {
-    margin: 0.75rem;
+  margin: 0.75rem;
+  margin-left: 0;
 }
 
 @media (max-width: 500px) {
@@ -114,9 +116,9 @@ h2 {
     padding: 2rem 1rem;
   }
   .about-h1 {
-    font: bold 48px/normal var(--ff); ;
+    font: bold 48px/normal var(--ff);
   }
   .about-homelink {
-    font: normal 40px/normal var(--ff);;
+    font: normal 40px/normal var(--ff);
   }
 }
