@@ -1,0 +1,124 @@
+:root {
+    /* darkmode color */
+    --colorbackground: #1c1c1c;
+    --colorprimary: #f5f5dc;
+    --colorsecondary: #d7d7a8;
+    --coloraccent: #507963;
+  
+    /* lightmode color */
+    /* tbd */
+    
+    /* fonts */
+    --ff: Familjen Grotesk;
+    --ff-links: Space Grotesk;
+    --ff-details: Darker Grotesque;
+  
+    /* font size */
+    --font-xxs: 2rem;
+    --font-xs: 2.5rem;
+    --font-s: 3rem;
+    --font-m: 3.5rem;
+    --font-l: 4rem;
+    --font-xl: 4.5rem;
+  
+    /* margins */
+    --margin-xxs: 3rem;
+    --margin-xs: 4rem;
+    --margin-s: 5rem;
+    --margin-m: 6rem;
+    --margin-l: 7rem;
+    --margin-xl: 8rem;
+  
+    /* text */
+    /* font weigh - font size - line height - font family */
+    --homelink-about: normal 48px/normal var(--ff); /* ~/ */
+    --about-h1: bold 80px/normal var(--ff); /* hi! */
+    --about-h2: normal 24px/normal var(--ff-details); /* work about contact */
+    --about-h3: normal 28px/normal var(--ff-details); /* devops bachelor msc */
+    --about-h4: normal 20px/normal var(--ff); /* valence spain */
+}
+
+.about-homelink {
+  font: var(--homelink-contact)
+}
+
+div {
+    width: 100%;
+    display: flex;
+}
+.about-parent-container {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+.about-first-column {
+  display: flex;
+  align-items: start;
+  flex: 1;
+  padding: 96px 94px;
+}
+.about-homelink {
+  font: var(--homelink-about)
+}
+.about-h2-div {
+  flex-direction: column;
+}
+.about-greeting-section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  flex: 5;
+  padding: 96px 94px;
+}
+.about-hi-div {
+  flex: 2;
+}
+
+/* h1 */
+.about-h1 {
+  font: var(--about-h1);
+  margin-bottom: 16px;
+}
+
+h2 {
+  font: var(--about-h2);
+}
+.about-h2 {
+  margin: 0.75rem;
+  margin-left: 0;
+}
+
+@media (max-width: 500px) {
+  .about-parent-container {
+    flex-direction: row;
+    height: 100vh;
+    /* padding: 0.5rem 0.75rem; */
+    flex-wrap: wrap;
+  }
+  .about-first-column {
+    display: flex;
+    flex: 1;
+    padding: 2rem 1rem;
+    height: 5vh;
+  }
+  .about-second-column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+  .about-greeting-section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    flex: 5;
+    padding: 2rem 1rem;
+  }
+  .about-h1 {
+    font: bold 48px/normal var(--ff);
+  }
+  .about-homelink {
+    font: normal 40px/normal var(--ff);
+  }
+}
