@@ -12,8 +12,8 @@ const Contact = () => {
       <div className='contact-second-column'>
 
         <div className='contact-h2-div'>
-          <h2 className='contact-h1'>Got a challenge?</h2>
-          <h2 className='contact-h1'>Reach out.</h2>
+          <h2 className='contact-h1-question'>Got a challenge?</h2>
+          <h2 className='contact-h1-hook'>Reach out.</h2>
         </div>
 
         <div className='contact-empty-horizontal'>

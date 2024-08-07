@@ -71,9 +71,7 @@ div {
   flex: 5;
   padding: 96px 94px;
 }
-.about-hi-div {
-  flex: 2;
-}
+
 
 /* h1 */
 .about-h1 {
@@ -116,9 +114,15 @@ h2 {
     padding: 2rem 1rem;
   }
   .about-h1 {
-    font: bold 48px/normal var(--ff);
+    font: bold 44px/normal var(--ff);
+    margin-top: 5rem;
   }
   .about-homelink {
-    font: normal 40px/normal var(--ff);
+    font: normal 32px/normal var(--ff);
+  }
+  .about-h2 {
+    margin: 0.75rem;
+    margin-left: 0;
+    font: normal 20px/normal var(--ff-details);;
   }
 }
