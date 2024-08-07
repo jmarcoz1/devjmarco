@@ -111,7 +111,11 @@
 }
 
 /* h1 & h2 */
-.contact-h1 {
+.contact-h1-hook {
+  font: var(--h1-contact);
+  margin: 0;
+}
+.contact-h1-question {
   font: var(--h1-contact);
   margin: 0;
 }
@@ -149,7 +153,7 @@
   }
 
   .contact-homelink {
-    font: normal 40px/normal var(--ff);
+    font: normal 32px/normal var(--ff);
   }
   
   /* div */
@@ -194,9 +198,14 @@
   }
   
   /* h1 & h2 */
-  .contact-h1 {
-    font: bold 32px/normal var(--ff);
+  .contact-h1-hook {
+    font: bold 44px/normal var(--ff);
     margin: 0;
+  }
+  .contact-h1-question {
+    font: bold 44px/normal var(--ff);
+    margin-top: 5rem;
+    margin-bottom: 2rem;
   }
   .contact-h2 {
     font: var(--h2-catch);
@@ -207,12 +216,12 @@
   
   /* a */
   .contact-a {
-    font: normal 12px/normal var(--ff-links);
+    font: normal 10px/normal var(--ff-links);
     color: var(--colorprimary);
     margin: 0;
   }
   .contact-mail-a {
-    font: normal 24px/normal var(--ff-links);
+    font: normal 28px/normal var(--ff-details);
     color: var(--colorprimary);
     margin-bottom: 32px;
   }
