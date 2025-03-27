@@ -30,7 +30,7 @@ export function Contact({ onClose }: ContactProps) {
                 href="mailto:example@example.com" 
                 className="text-base sm:text-xl md:text-2xl font-mono underline hover:text-[#ff3366] transform hover:-rotate-2 transition-transform"
               >
-                example@example.com
+                marco.arraez.jorge@gmail.com
               </a>
             </div>
             
