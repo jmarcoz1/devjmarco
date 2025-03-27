@@ -1,16 +1,16 @@
-import React from 'react';
-import { Code, Pi, Cpu, Medal, Headphones, Terminal, ArrowLeft } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Code, Pi, Cpu, Medal, Headphones, Terminal, ArrowLeft, Lock } from 'lucide-react';
 
-const skills = [
-  { name: "Frontend", icon: Terminal, items: ["React", "TypeScript", "TailwindCSS"] },
-  { name: "Backend", icon: Code, items: ["Python", "PostgreSQL"] },
-  { name: "DevOps", icon: Cpu, items: ["Docker", "Jenkins", "AWS", "Kubernetes"] }
+const interests = [
+  { name: "Distributed Systems", icon: Cpu, description: "How to make systems that handle tons of data without breaking" },
+  { name: "Observability", icon: Terminal, description: "Knowing what's actually happening in production (before things break)" },
+  { name: "Cloud Automation", icon: Code, description: "Making infrastructure deploy itself so we can focus on building stuff" }
 ];
 
-const funFacts = [
-  { icon: Pi, text: "Knew 100 digits of Pi" },
-  { icon: Medal, text: "Ran a marathon (3:41)" },
-  { icon: Headphones, text: "BBO from Hoke on loop" }
+const languages = [
+  { text: "English (C2)", level: "Fluent—no problem with tech discussions or casual chat" },
+  { text: "Spanish (Native)", level: "My first language, obviously" },
+  { text: "German (B1)", level: "Can order beer and talk about the weather. Working on it." }
 ];
 
 interface AboutProps {
@@ -18,77 +18,168 @@ interface AboutProps {
 }
 
 export function About({ onClose }: AboutProps) {
+  const [unlockedInterests, setUnlockedInterests] = useState<number[]>([]);
+  const [unlockedLanguages, setUnlockedLanguages] = useState<number[]>([]);
+  const [glitchActive, setGlitchActive] = useState(false);
+
+  useEffect(() => {
+    const glitchInterval = setInterval(() => {
+      setGlitchActive(true);
+      setTimeout(() => setGlitchActive(false), 100);
+    }, Math.random() * 6000 + 3000);
+
+    return () => clearInterval(glitchInterval);
+  }, []);
+
+  const handleInterestClick = (index: number) => {
+    if (!unlockedInterests.includes(index)) {
+      setUnlockedInterests(prev => [...prev, index]);
+    }
+  };
+
+  const handleLanguageClick = (index: number) => {
+    if (!unlockedLanguages.includes(index)) {
+      setUnlockedLanguages(prev => [...prev, index]);
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-[#ff3366] p-4 sm:p-8 overflow-y-auto z-[100]">
-      <div className="max-w-6xl mx-auto">
-        <button 
+    <div className="fixed inset-0 bg-black p-4 sm:p-8 overflow-y-auto z-[100]">
+      {/* Glitch overlay */}
+      {glitchActive && (
+        <div className="fixed inset-0 bg-white opacity-5 z-40 pointer-events-none"
+             style={{ mixBlendMode: 'difference' }} />
+      )}
+
+      {/* Static noise background */}
+      <div
+        className="fixed inset-0 z-0 opacity-5"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
+        }}
+      />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <button
           onClick={onClose}
-          className="fixed top-4 sm:top-8 left-4 sm:left-8 bg-white p-3 sm:p-4 hover:bg-black hover:text-white transform hover:rotate-12 transition-all z-[110]"
+          className="fixed top-4 sm:top-8 left-4 sm:left-8 border-2 border-white bg-black text-white p-3 sm:p-4 hover:bg-white hover:text-black transition-all z-[110] uppercase font-bold"
         >
-          <ArrowLeft size={20} className="sm:w-6 sm:h-6" />
-          <span className="ml-2 font-bold hidden sm:inline">BACK</span>
+          <ArrowLeft size={20} className="sm:w-6 sm:h-6 inline" />
+          <span className="ml-2 hidden sm:inline">RETURN</span>
         </button>
-        
-        {/* Bio Section */}
-        <div className="border-4 sm:border-8 border-black bg-white p-4 sm:p-8 mb-6 sm:mb-8 transform -rotate-1 hover:rotate-1 transition-transform mt-16 sm:mt-24">
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold uppercase mb-4 sm:mb-8 relative inline-block">
-            ABOUT ME
-            <span className="absolute -inset-2 bg-[#00ffff] -z-10 transform -rotate-2" />
+
+        {/* Professional Philosophy Section */}
+        <div className="border-2 border-white bg-black p-4 sm:p-8 mb-6 sm:mb-8 mt-16 sm:mt-24">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold uppercase mb-4 sm:mb-8 text-white"
+              style={{ letterSpacing: '4px' }}>
+            ABOUT<span className="text-gray-600">_</span>ME
           </h2>
-          <div className="text-base sm:text-xl md:text-2xl font-mono space-y-4 sm:space-y-6">
-            <p className="relative inline-block">
-              Telecom engineer with a passion for creating
-              <span className="absolute -inset-2 bg-[#ffff00] -z-10 transform -rotate-1" />
+          <div className="text-sm sm:text-base md:text-lg space-y-4 sm:space-y-6 text-gray-300 leading-relaxed"
+               style={{ fontFamily: "'IBM Plex Mono', 'Space Mono', 'Courier New', monospace" }}>
+            <p className="text-white">
+              I'm into <span className="border-b-2 border-white font-bold">automation</span>, <span className="border-b-2 border-white font-bold">distributed systems</span>, and making things <span className="border-b-2 border-white font-bold">fast</span>. Most of my work sits somewhere between writing Python code and managing cloud infrastructure—deploying stuff with Kubernetes, setting up CI/CD pipelines, that kind of thing.
+            </p>
+            <p className="border-l-4 border-white pl-4">
+              I care a lot about writing code that other people (including future me) can actually maintain. And if I can measure that something works better, even better.
             </p>
             <p>
-              Based in <span className="font-bold">Valencia, Spain</span>, I tinker with technology from time to time.
-              I am currently working as a Backend Engineer at Mercadona and studying an MsC in Distributed Systems.
+              Right now I'm finishing my <span className="text-white font-bold">Master's in Distributed Computing</span> at UPV in Valencia—learning about how to process massive amounts of data without things exploding. It's pretty interesting, especially when you get to apply it to real systems.
+            </p>
+            <p className="text-white">
+              Long term? I want to build systems that don't fall over when they grow. The kind that are <span className="border-b border-white">efficient</span>, easy to <span className="border-b border-white">monitor</span>, and won't require a complete rewrite in six months.
             </p>
           </div>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mb-6 sm:mb-8">
-          {skills.map(({ name, icon: Icon, items }) => (
-            <div 
-              key={name}
-              className="border-4 sm:border-8 border-black bg-white p-4 sm:p-8 transform hover:scale-105 transition-transform"
-              style={{ transform: `rotate(${Math.random() * 4 - 2}deg)` }}
-            >
-              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-6">
-                <Icon size={24} className="sm:w-8 sm:h-8 text-[#ff3366]" />
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold uppercase">{name}</h3>
-              </div>
-              <ul className="space-y-2 sm:space-y-3">
-                {items.map(item => (
-                  <li 
-                    key={item}
-                    className="text-sm sm:text-base md:text-xl font-mono bg-black text-white px-2 sm:px-4 py-1 sm:py-2 inline-block transform hover:-rotate-2 transition-transform"
+        {/* Interests Grid - Click to unlock */}
+        <div className="mb-6 sm:mb-8">
+          <div className="text-gray-500 text-sm mb-4 uppercase tracking-widest">
+            [ {unlockedInterests.length}/{interests.length} INTERESTS REVEALED ]
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            {interests.map(({ name, icon: Icon, description }, index) => {
+              const isUnlocked = unlockedInterests.includes(index);
+              return (
+                <div
+                  key={name}
+                  className="border-2 border-white bg-black p-4 sm:p-6 transition-all duration-300 cursor-pointer relative"
+                  onClick={() => handleInterestClick(index)}
+                  style={{
+                    filter: isUnlocked ? 'none' : 'blur(3px)',
+                    opacity: isUnlocked ? 1 : 0.4
+                  }}
+                >
+                  {!isUnlocked && (
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                      <Lock size={32} color="#fff" strokeWidth={2} />
+                    </div>
+                  )}
+                  <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <Icon size={24} className="sm:w-8 sm:h-8 text-white" />
+                    <h3 className="text-lg sm:text-xl font-bold uppercase text-white"
+                        style={{ letterSpacing: '1px' }}>
+                      {isUnlocked ? name : '█'.repeat(name.length)}
+                    </h3>
+                  </div>
+                  <p
+                    className="text-sm sm:text-base text-gray-300"
+                    style={{
+                      fontFamily: "'IBM Plex Mono', 'Space Mono', 'Courier New', monospace",
+                      opacity: isUnlocked ? 1 : 0
+                    }}
                   >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                    {isUnlocked ? description : '█'.repeat(description.length)}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Fun Facts */}
-        <div className="border-4 sm:border-8 border-black bg-white p-4 sm:p-8 transform rotate-1">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase mb-4 sm:mb-8 relative inline-block">
-            FUN FACTS
-            <span className="absolute -inset-2 bg-[#00ff00] -z-10 transform -rotate-1" />
+        {/* Languages - Click to reveal */}
+        <div className="border-2 border-white bg-black p-4 sm:p-8">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase mb-4 sm:mb-8 text-white"
+              style={{ letterSpacing: '4px' }}>
+            LANGUAGES
           </h3>
+          <div className="text-gray-500 text-sm mb-4 uppercase tracking-widest">
+            [ {unlockedLanguages.length}/{languages.length} LANGUAGES DECODED ]
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            {funFacts.map(({ icon: Icon, text }) => (
-              <div 
-                key={text}
-                className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-black text-white transform hover:scale-105 hover:-rotate-2 transition-transform"
-              >
-                <Icon size={20} className="sm:w-6 sm:h-6" />
-                <span className="text-base sm:text-xl font-bold">{text}</span>
-              </div>
-            ))}
+            {languages.map(({ text, level }, index) => {
+              const isUnlocked = unlockedLanguages.includes(index);
+              return (
+                <div
+                  key={text}
+                  className="flex flex-col gap-2 p-4 sm:p-6 border-2 border-white cursor-pointer transition-all duration-300 relative"
+                  onClick={() => handleLanguageClick(index)}
+                  style={{
+                    backgroundColor: '#000',
+                    filter: isUnlocked ? 'none' : 'blur(2px)',
+                    opacity: isUnlocked ? 1 : 0.5
+                  }}
+                >
+                  {!isUnlocked && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Lock size={24} color="#fff" strokeWidth={2} />
+                    </div>
+                  )}
+                  <div className="flex items-center gap-3">
+                    <span className="text-base sm:text-lg font-bold text-white uppercase"
+                          style={{ fontFamily: "'JetBrains Mono', 'Space Mono', 'Courier New', monospace" }}>
+                      {isUnlocked ? text : '█'.repeat(text.length)}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-gray-400 pl-8"
+                     style={{
+                       fontFamily: "'IBM Plex Mono', 'Space Mono', 'Courier New', monospace",
+                       opacity: isUnlocked ? 1 : 0
+                     }}>
+                    {isUnlocked ? level : '█'.repeat(level.length)}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
