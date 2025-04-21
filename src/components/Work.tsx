@@ -75,7 +75,7 @@ export function Work({ onClose }: WorkProps) {
                     className="bg-[#00ff00] hover:bg-black hover:text-white p-3 sm:p-4 flex-1 md:flex-initial flex items-center justify-center gap-2 transform hover:rotate-6 transition-all text-center"
                   >
                     {/* <ExternalLink size={24} /> */}
-                    <span className="font-bold text-sm sm:text-base">Link coming soon</span>
+                    <span className="font-bold text-sm sm:text-base">Visit</span>
                   </a>
                   <a 
                     href={project.github}
