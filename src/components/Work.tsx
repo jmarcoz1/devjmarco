@@ -13,7 +13,7 @@ const projects: Project[] = [
   {
     title: "STARK",
     description: "Fitness app for tracking workouts and progress.",
-    link: "https://cyberbank.example.com",
+    link: "https://stark-app.com",
     github: "https://github.com/jmarcoz1",
     tags: ["Django", "TypeScript", "AWS"]
   }
